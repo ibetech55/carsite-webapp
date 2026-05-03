@@ -1,0 +1,8 @@
+<div class="steps-component">
+    <ul>
+       <li *ngFor="let step of steps; let idx = index" (click)="handleStepIndexEmitter.emit(step)" [ngClass]="step.index === stepIndex.index ? 'active' : ''" >
+            <span class="steps-component__label">{{step.label}}</span>
+            <span class="steps-component__desc">{{step.description}}</span>
+       </li>
+    </ul>
+</div>

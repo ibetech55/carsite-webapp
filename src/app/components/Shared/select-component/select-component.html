@@ -1,0 +1,27 @@
+<div class="select-component">
+    <mat-label class="label">
+        {{label}}
+    </mat-label>
+
+    @if(controlName){
+    <mat-form-field>
+        <mat-select [formControlName]="controlName" [multiple]="multiple">
+            @for(option of options; track $index){
+            @if(option.label && option.value){
+            <mat-option [value]="option.value">{{option.label}}</mat-option>
+            }
+            }
+        </mat-select>
+    </mat-form-field>
+    } @else {
+    <mat-form-field>
+        <mat-select>
+            @for(option of options; track $index){
+            @if(option.label && option.value){
+            <mat-option [value]="option.value">{{option.label}}</mat-option>
+            }
+            }
+        </mat-select>
+    </mat-form-field>
+    }
+</div>

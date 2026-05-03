@@ -1,0 +1,37 @@
+.sell-car-page {
+    display: flex;
+
+    &__steps {
+        height: calc(100vh - 60px);
+        width: 270px;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        border-right: 1px solid #c4c4c4;
+        padding: 2rem 0;
+    }
+
+    &__form {
+        width: calc(100% - 270px);
+        height: 200vh;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        padding: 2rem
+    }
+
+    &__btns {
+        width: 45%;
+        align-items: center;
+        justify-content: space-between;
+        display: flex;
+
+        &-submit, &-prev-next {
+            display: flex;
+        }
+
+        &-submit__sad, &-prev-next__prev {
+            margin-right: 1.5rem;
+        }
+    }
+}

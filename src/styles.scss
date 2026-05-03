@@ -1,1 +1,261 @@
+// Include theming for Angular Material with `mat.theme()`.
+// This Sass mixin will define CSS variables that are used for styling Angular Material
+// components according to the Material 3 design spec.
+// Learn more about theming and how to use it for your application's
+// custom components at https://material.angular.dev/guide/theming
+@use '@angular/material' as mat;
+@use 'Theme/theme-colors' as colors;
+@use './Theme/variables' as variables;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --mat-sys-primary: #{variables.$primary-color};
+  --mat-sys-on-primary: #ffffff;
+  --mat-table-row-item-outline-color: #dad7d7;
+  --mat-button-filled-container-shape: 5px;
+  --mat-button-protected-container-color: #{variables.$primary-color};
+  --mat-button-protected-label-text-color: #fff;
+  --mat-button-protected-label-text-size: 14px;
+  --mat-expansion-container-shape: 0;
+  --mat-expansion-container-background-color: #fff;
+  --mat-expansion-header-text-weight: 500;
+  --mat-expansion-header-text-size: 14px;
+  --mat-option-focus-state-layer-color: #dad7d7;
+  --mat-select-panel-background-color: #fff;
+  --mat-option-label-text-size: 12px;
+  --mat-select-trigger-text-size: 12px;
+  --mat-dialog-container-shape: 0px;
+  --mat-dialog-container-color: #fff;
+}
+
+html {
+  height: 100%;
+  @include mat.theme((color: (primary: colors.$primary-palette,
+        tertiary: colors.$primary-palette,
+        warn: colors.$warn-palette,
+      ),
+      typography: Roboto,
+      density: 0,
+    ));
+}
+
+body {
+  // Default the application to a light color theme. This can be changed to
+  // `dark` to enable the dark color theme, or to `light dark` to defer to the
+  // user's system settings.
+  color-scheme: light;
+
+  // Set a default background, font and text colors for the application using
+  // Angular Material's system-level CSS variables. Learn more about these
+  // variables at https://material.angular.dev/guide/system-variables
+  background-color: #fff;
+  color: var(--mat-sys-on-surface);
+  font: var(--mat-sys-body-medium);
+
+  // Reset the user agent margin.
+  margin: 0;
+  height: 100%;
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+               'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+               'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+               'Noto Color Emoji';
+}
+
+.mat-mdc-unelevated-button {
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+}
+
+
 /* You can add global styles to this file, and also import other style files */
+
+.mat-mdc-table {
+  background-color: #ffffff !important;
+}
+
+.mat-mdc-paginator-container {
+  background-color: #f3f3f3 !important;
+}
+
+.mat-mdc-raised-button,
+.mat-mdc-raised-button .mdc-button__ripple {
+  border-radius: 5px !important;
+
+}
+
+button.danger {
+  background-color: red !important;
+  color: #fff !important;
+}
+
+button.primary {
+  background-color: var(--mat-sys-primary) !important;
+  color: #fff !important;
+}
+
+.mat-mdc-raised-button {
+  height: unset !important;
+  padding: 6px 8px !important;
+  font-size: 12px !important;
+}
+
+.mat-mdc-header-cell,
+.mat-mdc-cell {
+  font-size: 12px;
+}
+
+.mat-mdc-row,
+.mat-mdc-header-row {
+  height: 47px !important;
+}
+
+.mat-expansion-panel-header {
+  padding: 14px;
+}
+
+.mat-mdc-form-field-infix {
+  height: 10px !important;
+}
+
+.mdc-text-field--outlined .mat-mdc-form-field-infix,
+.mdc-text-field--no-label .mat-mdc-form-field-infix {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.mat-mdc-form-field-infix {
+  min-height: unset !important;
+  height: 30px !important;
+}
+
+
+.mat-mdc-form-field .mdc-notched-outline__leading,
+.mat-mdc-form-field .mdc-notched-outline__notch,
+.mat-mdc-form-field .mdc-notched-outline__trailing {
+  border-color: #cfcfcf !important;
+
+}
+
+.mdc-text-field--no-label:not(.mdc-text-field--textarea) .mat-mdc-form-field-input-control.mdc-text-field__input,
+.mat-mdc-text-field-wrapper .mat-mdc-form-field-input-control {
+  height: 100% !important;
+  font-size: 12px;
+  padding: 2px 0px;
+}
+
+/* Focused outline border */
+.mat-mdc-form-field.mat-focused .mdc-notched-outline__leading,
+.mat-mdc-form-field.mat-focused .mdc-notched-outline__notch,
+.mat-mdc-form-field.mat-focused .mdc-notched-outline__trailing {
+  border: 1px solid var(--mat-sys-primary) !important;
+  /* your color */
+}
+
+.mdc-text-field--filled {
+  border: 1px solid #dad7d7;
+  background-color: #fff;
+}
+
+.mdc-line-ripple::before,
+.mdc-line-ripple::after {
+  border-bottom: none !important;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: #fff !important;
+}
+
+input:hover {
+  background-color: #fff !important;
+}
+
+.mdc-text-field {
+  background-color: #fff !important;
+}
+
+.mdc-text-field:hover {
+  background-color: #fff !important;
+}
+
+.mat-mdc-form-field-focus-overlay {
+  background-color: #fff !important;
+}
+
+.mdc-text-field--filled {
+  border-bottom-right-radius: 5px !important;
+  border-bottom-left-radius: 5px !important;
+}
+
+.mdc-text-field--focused {
+  border: 1px solid var(--mat-sys-primary) !important;
+}
+
+.component-border {
+  border-radius: 5px;
+  padding: 1rem;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.section-background {
+  background-color: #fff;
+  padding: 2rem;
+}
+
+.mat-mdc-form-field {
+  display: block !important;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+.mat-mdc-select {
+  display: flex !important;
+  height: 100% !important;
+
+}
+
+.label {
+  font-weight: bold;
+  color: #6d6e71;
+  font-size: 13px;
+}
+
+.page {
+  padding: 2rem;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.page-header {
+  margin-bottom: 2rem;
+}
+
+.form-input-mb{
+  margin-bottom: 1rem;
+}
+
+.mat-mdc-dialog-content {
+  overflow-y: auto;
+  max-height: 100%;
+  display: block; /* important */
+}
+
+.mdc-form-field--align-end>label {
+  font-size: 13px;
+  padding: 0 !important;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.download-link {
+  text-decoration: underline;
+  color: var(--mat-sys-primary);
+  cursor: pointer;
+}

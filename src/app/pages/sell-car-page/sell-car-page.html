@@ -1,0 +1,18 @@
+<div class="sell-car-page">
+    <div class="sell-car-page__steps">
+        <app-steps-component (handleStepIndexEmitter)="handleStepIndex($event)" [stepIndex]="stepIndex" />
+    </div>
+    <div class="sell-car-page__form">
+        <app-sell-car-form [stepIndex]="stepIndex" [sellCarForm]="sellCarForm" />
+        <div class="sell-car-page__btns">
+            <div class="sell-car-page__btns-prev-next">
+                <app-button-component label="Previous" class="sell-car-page__btns-prev-next__prev" (onClick)="handlePrev()" />
+                <app-button-component label="Next" (onClick)="handleNext()" />
+            </div>
+            <div class="sell-car-page__btns-submit">
+                <app-button-component label="Save as Draft" class="sell-car-page__btns-submit__sad" />
+                <app-button-component label="Submit" (onClick)="handleSubmit()" />
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="sell-car-form">
+    <h1 class="page-header">Sell Car</h1>
+    <h2 class="sell-car-form__label">{{stepIndex.label}}</h2>
+    <form [formGroup]="sellCarForm" class="sell-car-form__form-indexes" [ngSwitch]="stepIndex.index">
+        <div *ngSwitchCase="0">
+            <app-sell-car-details-form />
+        </div>
+        <div *ngSwitchCase="1">
+            <app-sell-car-price-form />
+        </div>
+    </form>
+</div>

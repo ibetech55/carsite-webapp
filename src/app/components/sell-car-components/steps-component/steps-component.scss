@@ -1,0 +1,28 @@
+.steps-component {
+    .active{
+        background-color: #c4c4c4;
+    }
+    ul {
+        li {
+            padding: 1rem;
+
+            &:hover {
+                cursor: pointer;
+                background-color: #c4c4c4;
+            }
+
+            span {
+                display: block;
+            }
+        }
+    }
+
+    &__label {
+        font-size: 18px;
+        font-weight:500;
+    }
+
+    &__desc {
+        font-size: 12px;
+    }
+}

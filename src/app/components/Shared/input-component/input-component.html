@@ -1,0 +1,14 @@
+<div class="input-component">
+  <mat-label class="label">{{label}}</mat-label>
+    <mat-form-field appearance="fill">
+      @if(controlName){
+        <input matInput [id]="id" [name]="id" [formControlName]="controlName" [type]="type">
+      } 
+
+      @if(!controlName){
+          <input matInput [id]="id" [name]="id" [type]="type">
+      }
+
+    </mat-form-field>   
+</div>
+  
