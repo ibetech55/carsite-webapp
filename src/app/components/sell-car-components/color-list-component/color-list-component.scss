@@ -1,0 +1,58 @@
+.color-list-component {
+    &__color-btn {
+        width: 30px;
+        height: 30px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        &:hover {
+            border-color: var(--mat-sys-primary);
+
+            & .color-list-component__color-btn__inner {
+                background-color: var(--mat-sys-primary);
+            }
+        }
+
+        &__inner {
+            height: 80%;
+            width: 80%;
+            border-radius: 5px;
+            background-color: #ccc;
+        }
+    }
+
+
+    &__list {
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 20px;
+        background-color: #fff;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        padding: 1rem;
+
+        &__color {
+            height: 25px;
+            width: 25px;
+            border-radius: 5px;
+                    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
+        }
+
+        &__label {
+            font-size: 12px;
+            display: block;
+        }
+    }
+
+}
+
+    .colorSelectedText{
+        display: block;
+        height: 20px;
+        min-width: 100px;
+    }

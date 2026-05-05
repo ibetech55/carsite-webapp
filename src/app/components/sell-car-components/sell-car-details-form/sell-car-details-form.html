@@ -41,4 +41,7 @@
     <div class="sell-car-details-form__form-control">
         <app-input-component label="Number of keys" id="number-of-keys" />
     </div>
+    <div class="sell-car-details-form__form-control">
+        <app-sell-car-color-inputs (handleCarColorEmitter)="handleCarColorEmitter.emit($event)" />
+    </div>
 </div>
