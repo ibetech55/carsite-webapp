@@ -1,0 +1,17 @@
+<div class="sell-car-conditions-form">
+    <div class="sell-car-conditions-form__radio">
+        <app-radio-buttons label="Condition" [options]="conditionOptions" controlName="condition"
+            [errorMessage]="getErrorMessages('condition')" [hasError]="getHasError('condition')" />
+    </div>
+    <div class="sell-car-conditions-form__radio">
+        <app-radio-buttons label="Has this car ever been in a car accident" [options]="accidentOptions"
+            controlName="accident" />
+    </div>
+    <div class="sell-car-conditions-form__radio">
+        <app-radio-buttons label="Does this car have a clean history report" [options]="historyOptions"
+            controlName="cleanHistory" />
+    </div>
+    <div class="sell-car-conditions-form__radio">
+        <app-radio-buttons label="Does this car have any issues " [options]="issueOptions" controlName="hasIssues" />
+    </div>
+</div>

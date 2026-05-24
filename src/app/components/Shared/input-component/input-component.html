@@ -1,14 +1,14 @@
 <div class="input-component">
   <mat-label class="label">{{label}}</mat-label>
-    <mat-form-field appearance="fill">
-      @if(controlName){
-        <input matInput [id]="id" [name]="id" [formControlName]="controlName" [type]="type">
-      } 
+  <mat-form-field appearance="fill" [class.error-border]="hasError">
+    @if(controlName){
+    <input matInput [id]="id" [name]="id" [formControlName]="controlName" [type]="type"
+      [attr.min]="type === 'number' ? '0' : null">
+    }
 
-      @if(!controlName){
-          <input matInput [id]="id" [name]="id" [type]="type">
-      }
-
-    </mat-form-field>   
+    @if(!controlName){
+    <input matInput [id]="id" [name]="id" [type]="type">
+    }
+  </mat-form-field>
+  <span *ngIf="hasError" class="error-message">{{errorMessage}}</span>
 </div>
-  

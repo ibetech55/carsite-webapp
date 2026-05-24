@@ -1,0 +1,7 @@
+<div class="radio-buttons">
+    <label class="radio-buttons__label label">{{label}}</label>
+    <mat-radio-group [aria-label]="label" [formControlName]="controlName">
+        <mat-radio-button *ngFor="let option of options;" [value]="option?.value">{{option?.value}}</mat-radio-button>
+    </mat-radio-group>
+    <span *ngIf="hasError" class="error-message">{{errorMessage}}</span>
+</div>

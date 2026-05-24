@@ -1,47 +1,63 @@
 <div class="sell-car-details-form">
-    <div class="sell-car-details-form__form-control">
-        <app-input-component label="Make" id="make" controlName="make" />
+    <div *ngIf="makeOptions$ | async as makeOptions" class="sell-car-details-form__form-control">
+        <app-select-component label="Make" id="makeName" controlName="makeName" [options]="makeOptions"
+            [hasError]="checkRequiredError('makeName')" [errorMessage]="getErrorMessage('makeName')"
+            (onChangeEmitter)="handleMakeChange($event)" />
     </div>
     <div class="sell-car-details-form__form-control">
-        <app-input-component label="Model" id="model" controlName="model" />
+        <app-select-component label="Model" id="modelName" controlName="modelName" [options]="(modelOptions$ | async) ?? []"
+            [hasError]="checkRequiredError('modelName')" [errorMessage]="getErrorMessage('modelName')" />
     </div>
     <div class="sell-car-details-form__form-control">
-        <app-select-component label="Year" [options]="yearOptions" controlName="year" />
+        <app-select-component label="Year" [options]="yearOptions" controlName="year"
+            [hasError]="checkRequiredError('year')" [errorMessage]="getErrorMessage('year')" />
     </div>
     <div class="sell-car-details-form__form-control">
-        <app-input-component label="Transmission" id="transmission" />
+        <app-sell-car-color-inputs />
     </div>
     <div class="sell-car-details-form__form-control">
-        <app-input-component label="Drivetrain" id="drivetrain" />
+        <app-select-component label="Transmission" controlName="transmission" [options]="transmissionOptions"
+            [hasError]="checkRequiredError('transmission')" [errorMessage]="getErrorMessage('transmission')" />
     </div>
     <div class="sell-car-details-form__form-control">
-        <app-input-component label="Engine" id="engine" />
+        <app-input-component label="Drivetrain" controlName="drivetrain" [hasError]="checkRequiredError('drivetrain')"
+            [errorMessage]="getErrorMessage('drivetrain')" />
     </div>
     <div class="sell-car-details-form__form-control">
-        <app-input-component label="Mileage" id="mileage" />
+        <app-input-component label="Engine" controlName="engine" [hasError]="checkRequiredError('engine')"
+            [errorMessage]="getErrorMessage('engine')" />
     </div>
     <div class="sell-car-details-form__form-control">
-        <app-input-component label="Street Address" id="street-address" />
+        <app-input-component label="Mileage" controlName="mileage" [hasError]="checkRequiredError('mileage')"
+            [errorMessage]="getErrorMessage('mileage')" />
     </div>
     <div class="sell-car-details-form__form-control">
-        <app-input-component label="State" id="state" />
+        <app-input-component label="Street Address" controlName="streetAddress"
+            [hasError]="checkRequiredError('streetAddress')" [errorMessage]="getErrorMessage('streetAddress')" />
     </div>
     <div class="sell-car-details-form__form-control">
-        <app-input-component label="City" id="city" />
+        <app-select-component label="State" id="state" controlName="state" [options]="stateOptions"
+            [hasError]="checkRequiredError('state')" [errorMessage]="getErrorMessage('state')"
+            (onChangeEmitter)="handleStateChanged($event)" />
     </div>
     <div class="sell-car-details-form__form-control">
-        <app-input-component label="Zip Code" id="zip-code" />
+        <app-select-component label="City" id="city" controlName="city" [options]="cityOptions"
+            [hasError]="checkRequiredError('city')" [errorMessage]="getErrorMessage('city')" />
     </div>
     <div class="sell-car-details-form__form-control">
-        <app-input-component label="Number of owners" id="number-of-owners" />
+        <app-input-component label="Zip Code" controlName="zipCode" [hasError]="checkRequiredError('zipCode')"
+            [errorMessage]="getErrorMessage('zipCode')" />
     </div>
     <div class="sell-car-details-form__form-control">
-        <app-input-component label="Making payments" id="making-payments" />
+        <app-input-component label="Number of owners" controlName="numberOwners" type="number"
+            [hasError]="checkRequiredError('numberOwners')" [errorMessage]="getErrorMessage('numberOwners')" />
     </div>
     <div class="sell-car-details-form__form-control">
-        <app-input-component label="Number of keys" id="number-of-keys" />
+        <app-radio-buttons label="Making payments" [options]="paymentOptions" controlName="hasPayments"
+            [hasError]="checkRequiredError('hasPayments')" [errorMessage]="getErrorMessage('hasPayments')" />
     </div>
     <div class="sell-car-details-form__form-control">
-        <app-sell-car-color-inputs (handleCarColorEmitter)="handleCarColorEmitter.emit($event)" />
+        <app-input-component label="Number of keys" controlName="numberKeys" type="number"
+            [hasError]="checkRequiredError('numberKeys')" [errorMessage]="getErrorMessage('numberKeys')" />
     </div>
 </div>

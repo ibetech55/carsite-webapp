@@ -13,8 +13,8 @@
                 <input type="file" #selectedFile (change)="handleFileSelected($event)"
                     class="sell-car-image-form__input">
             </div>
-            <div *ngIf="defaultImagePreviewUrl" class="sell-car-image-form__default-image-preview">
-                <img [src]="defaultImagePreviewUrl" alt="default-car-image">
+            <div *ngIf="_defaultImagePreviewUrl" class="sell-car-image-form__default-image-preview">
+                <img [src]="_defaultImagePreviewUrl" alt="default-car-image">
             </div>
         </div>
     </div>
@@ -33,13 +33,22 @@
         </div>
     </div>
     <div cdkDropList cdkDropListOrientation="mixed" (cdkDropListDropped)="drop($event)"
-        class="sell-car-image-form__multiple-images-preview" *ngIf="multipleImages.length > 0">
-        <div *ngFor="let image of multipleImages; let idx = index" cdkDrag>
+        class="sell-car-image-form__multiple-images-preview" *ngIf="_multipleImages.length > 0">
+        <div *ngFor="let image of _multipleImages; let idx = index" cdkDrag>
             <div class="sell-car-image-form__multiple-images-preview__img">
                 <img [src]="image.url" alt="">
             </div>
-            <div (click)="remove(idx)">
-                remove
+            <div class="sell-car-image-form__multiple-images-preview__icons">
+                <div (click)="remove(idx)" class="cursor-pointer">
+                    <span class="material-icons delete-icon">
+                        delete
+                    </span>
+                </div>
+                <div (click)="remove(idx)" class="cursor-pointer">
+                    <span class="material-icons">
+                        fullscreen
+                    </span>
+                </div>
             </div>
         </div>
     </div>

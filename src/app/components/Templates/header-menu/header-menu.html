@@ -1,7 +1,7 @@
 <div class="header-menu">
     <ul>
         <li *ngFor="let item of items">
-            <a [href]="item.href">{{item.label}}</a>
+            <a (click)="handleRoute(item.href)">{{item.label}}</a>
         </li>
     </ul>
 </div>

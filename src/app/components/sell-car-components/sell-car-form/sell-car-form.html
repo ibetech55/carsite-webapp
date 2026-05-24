@@ -3,16 +3,25 @@
     <h2 class="sell-car-form__label">{{stepIndex.label}}</h2>
     <form [formGroup]="sellCarForm" class="sell-car-form__form-indexes" [ngSwitch]="stepIndex.index">
         <div *ngSwitchCase="0" class="sell-car-form-width">
-            <app-sell-car-details-form (handleCarColorEmitter)="handleCarColor.emit($event)" />
+            <app-sell-car-details-form />
         </div>
         <div *ngSwitchCase="1" class="sell-car-form-width">
             <app-sell-car-price-form />
         </div>
+        <div *ngSwitchCase="2" class="sell-car-form-width">
+            <app-sell-car-conditions-form />
+        </div>
         <div *ngSwitchCase="3">
-            <app-sell-car-image-form 
-                (handleFileSelectedEmitter)="handleFileSelected.emit($event)" 
-                (handleMulipleImageDataEmitter)="handleMulipleImageData.emit($event)"
-            />
+            <app-sell-car-image-form />
+        </div>
+        <div *ngSwitchCase="4">
+            <app-sell-car-features-form />
+        </div>
+        <div *ngSwitchCase="5" class="sell-car-form-width">
+            <app-sell-car-comment-form />
+        </div>
+        <div *ngSwitchCase="6" class="sell-car-form-width">
+            <app-sell-car-personal-info-form />
         </div>
     </form>
 </div>
