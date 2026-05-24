@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { ControlContainer, FormGroupDirective, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatFormField } from '@angular/material/form-field';
+import { ControlContainer, FormGroupDirective, FormsModule, ReactiveFormsModule, ValidationErrors } from '@angular/forms';
+import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-input-component',
-  imports: [MatFormField, MatInputModule, FormsModule, ReactiveFormsModule, CommonModule],
+  imports: [MatFormFieldModule, MatFormField, MatInputModule, FormsModule, ReactiveFormsModule, CommonModule],
   templateUrl: './input-component.html',
   styleUrl: './input-component.scss',
   viewProviders: [
@@ -18,4 +18,7 @@ export class InputComponent {
   @Input() label!: string;
   @Input() controlName: string = "";
   @Input() type: string = "text";
+  @Input() disabled: boolean = false;
+  @Input() errorMessage!: string;
+  @Input() hasError: boolean = false;
 }

@@ -1,0 +1,17 @@
+<div class="sell-car-personal-info-form">
+    <div class="form-control-mb">
+        <app-input-component label="Seller" controlName="seller" />
+    </div>
+    <div class="form-control-mb">
+        <app-input-component label="Phone Number" controlName="phoneNumber" />
+    </div>
+    <div class="form-control-mb">
+        <app-input-component label="Location" controlName="location" />
+    </div>
+    <div class="form-control-mb">
+        <app-input-component label="Email" controlName="email" />
+    </div>
+    <div class="form-control-mb">
+        <app-input-component label="Vehicle Identification Number (VIN)" controlName="vin" [hasError]="gethasError('vin')" [errorMessage]="getErrorMessage('vin')"/>
+    </div>
+</div>

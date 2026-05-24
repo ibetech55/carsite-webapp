@@ -4,8 +4,8 @@
     </mat-label>
 
     @if(controlName){
-    <mat-form-field>
-        <mat-select [formControlName]="controlName" [multiple]="multiple">
+    <mat-form-field [class.error-border]="hasError">
+        <mat-select  [formControlName]="controlName" [multiple]="multiple" (valueChange)="onChangeEmitter.emit($event)">
             @for(option of options; track $index){
             @if(option.label && option.value){
             <mat-option [value]="option.value">{{option.label}}</mat-option>
@@ -24,4 +24,5 @@
         </mat-select>
     </mat-form-field>
     }
+    <span *ngIf="hasError" class="error-message">{{errorMessage}}</span>
 </div>

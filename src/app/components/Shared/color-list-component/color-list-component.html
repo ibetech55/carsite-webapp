@@ -1,0 +1,21 @@
+<div class="color-list-component">
+    <div class="color-list-component__input">
+        <label class="label">{{label}}</label>
+        <div class="color-list-component__color-btn" (click)="isOpen = !isOpen" cdkOverlayOrigin
+            #origin="cdkOverlayOrigin">
+            <div class="color-list-component__color-btn__inner" [ngStyle]="{'backgroundColor':colorSelected}"></div>
+        </div>
+        <span class="colorSelectedText">{{colorSelectedText}}</span>
+    </div>
+
+    <ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="origin" [cdkConnectedOverlayOpen]="isOpen"
+        [cdkConnectedOverlayHasBackdrop]="false" (overlayOutsideClick)="isOpen = false" (detach)="isOpen = false">
+        <div class="color-list-component__list">
+            <div *ngFor="let color of colorList" class="color-list-component__list__inner">
+                <div class="color-list-component__list__color" [ngStyle]="{'backgroundColor':color.color}"
+                    (click)="handleColor(color)"></div>
+                <span class="color-list-component__list__label">{{color.label}}</span>
+            </div>
+        </div>
+    </ng-template>
+</div>

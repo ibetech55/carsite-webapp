@@ -1,0 +1,8 @@
+<div class="sell-car-color-inputs">
+    <div class="sell-car-color-inputs__ext">
+        <app-color-list-component label="Exterior Color" [colorList]="exteriorColors" (handleCarColorEmitter)="handleExtColor($event)" />
+    </div>
+    <div class="sell-car-color-inputs__int">
+        <app-color-list-component label="Interior Color" [colorList]="interiorColors" (handleCarColorEmitter)="handleIntColor($event)"  />
+    </div>
+</div>

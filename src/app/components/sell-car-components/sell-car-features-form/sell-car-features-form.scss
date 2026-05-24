@@ -1,0 +1,13 @@
+.sell-car-features-form {
+    &__features {
+        display: grid;
+        width: 50%;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+
+        &-section {
+            margin-bottom: 2rem;
+        }
+    }
+
+}

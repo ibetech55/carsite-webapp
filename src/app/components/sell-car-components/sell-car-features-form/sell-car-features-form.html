@@ -1,0 +1,10 @@
+<div class="sell-car-features-form">
+    <div *ngIf="features$ | async as features" class="sell-car-features-form__features">
+        <div *ngFor="let feature of features" class="sell-car-features-form__features-section">
+            <h4>{{feature.category}}</h4>
+            <div *ngFor="let ff of feature.features" class="sell-car-features-form__features-checkbox">
+                <app-checkbox-component [label]="ff.featureName" (changeEmitter)="addFeature($event)"[value]="ff.featureCode" [checked]="handleChecked(ff.featureCode)" />
+            </div>
+        </div>
+    </div>
+</div>

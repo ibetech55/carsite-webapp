@@ -1,0 +1,14 @@
+.text-area-component {
+    textarea {
+        display: block;
+        width: 100%;
+        border-color: #cfcfcf !important;
+        border-radius: 5px !important;
+        padding: 1rem;
+        font-size: 13px;
+
+        &:focus {
+            outline: 1px solid var(--mat-sys-primary) !important;
+        }
+    }
+}

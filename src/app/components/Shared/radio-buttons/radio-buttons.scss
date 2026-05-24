@@ -1,0 +1,9 @@
+.radio-buttons {
+    &__label {
+        display: block;
+    }
+}
+
+::ng-deep .mat-mdc-radio-button .mdc-label {
+  font-size: 13px !important;
+}

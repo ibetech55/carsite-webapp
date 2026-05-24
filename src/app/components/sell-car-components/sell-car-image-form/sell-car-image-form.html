@@ -1,0 +1,58 @@
+<div class="sell-car-image-form">
+    <div class="sell-car-image-form__default-image">
+        <label class="label">Add default image</label>
+        <div class="sell-car-image-form__default-image-section">
+            <div class="sell-car-image-form__default-image__dropzone sell-car-image-form__dropzone" fileDrag
+                (files)="defaultImageDropped($event)" (click)="selectedFile.click()">
+                <div class="sell-car-image-form__dropzone-text">
+                    <span class="sell-car-image-form__dropzone-text__click">Click or drag file to this area to
+                        upload</span>
+                    <span>Support for a single or bulk upload. Strictly prohibited from uploading company data or other
+                        banned files.</span>
+                </div>
+                <input type="file" #selectedFile (change)="handleFileSelected($event)"
+                    class="sell-car-image-form__input">
+            </div>
+            <div *ngIf="_defaultImagePreviewUrl" class="sell-car-image-form__default-image-preview">
+                <img [src]="_defaultImagePreviewUrl" alt="default-car-image">
+            </div>
+        </div>
+    </div>
+    <div class="sell-car-image-form__multiple-images">
+        <label class="label">Add multiple images</label>
+        <div class="sell-car-image-form__multiple-images__dropzone sell-car-image-form__dropzone" fileDrag
+            (files)="multipleImagesDropped($event)" (click)="selectedFiles.click()">
+            <div class="sell-car-image-form__dropzone-text">
+                <span class="sell-car-image-form__dropzone-text__click">Click or drag file to this area to
+                    upload</span>
+                <span>Support for a single or bulk upload. Strictly prohibited from uploading company data or other
+                    banned files.</span>
+            </div>
+            <input type="file" #selectedFiles multiple (change)="handleMultipleFilesSelected($event)"
+                class="sell-car-image-form__input">
+        </div>
+    </div>
+    <div cdkDropList cdkDropListOrientation="mixed" (cdkDropListDropped)="drop($event)"
+        class="sell-car-image-form__multiple-images-preview" *ngIf="_multipleImages.length > 0">
+        <div *ngFor="let image of _multipleImages; let idx = index" cdkDrag>
+            <div class="sell-car-image-form__multiple-images-preview__img">
+                <img [src]="image.url" alt="">
+            </div>
+            <div class="sell-car-image-form__multiple-images-preview__icons">
+                <div (click)="remove(idx)" class="cursor-pointer">
+                    <span class="material-icons delete-icon">
+                        delete
+                    </span>
+                </div>
+                <div (click)="remove(idx)" class="cursor-pointer">
+                    <span class="material-icons">
+                        fullscreen
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sell-car-image-form__remove-all">
+        <app-button-component (onClick)="removeAll()" label="Remove All" />
+    </div>
+</div>

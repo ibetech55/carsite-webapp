@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header-menu',
@@ -8,6 +9,12 @@ import { Component } from '@angular/core';
   styleUrl: './header-menu.scss',
 })
 export class HeaderMenu {
+  /**
+   *
+   */
+  constructor(private readonly _Router:Router) {
+    
+  }
   items = [
     {
       label:"Buy",
@@ -25,5 +32,9 @@ export class HeaderMenu {
       label:"Finance",
       href:"finance"
     }
-  ]
+  ];
+
+  handleRoute(route:string){
+    this._Router.navigate([route])
+  }
 }

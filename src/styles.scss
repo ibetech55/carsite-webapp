@@ -14,6 +14,10 @@
 }
 
 :root {
+  @include mat.radio-overrides((touch-target-size: 32px));
+
+
+
   --mat-sys-primary: #{variables.$primary-color};
   --mat-sys-on-primary: #ffffff;
   --mat-table-row-item-outline-color: #dad7d7;
@@ -31,6 +35,12 @@
   --mat-select-trigger-text-size: 12px;
   --mat-dialog-container-shape: 0px;
   --mat-dialog-container-color: #fff;
+
+}
+
+.mat-mdc-radio-button {
+  transform: scale(0.85) !important;
+  transform-origin: left center !important;
 }
 
 html {
@@ -62,9 +72,9 @@ body {
   height: 100%;
 
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-               'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
-               'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-               'Noto Color Emoji';
+    'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
 }
 
 .mat-mdc-unelevated-button {
@@ -217,6 +227,7 @@ input:hover {
 .mat-mdc-select {
   display: flex !important;
   height: 100% !important;
+  padding: 0 1rem !important;
 
 }
 
@@ -235,14 +246,15 @@ input:hover {
   margin-bottom: 2rem;
 }
 
-.form-input-mb{
+.form-input-mb {
   margin-bottom: 1rem;
 }
 
 .mat-mdc-dialog-content {
   overflow-y: auto;
   max-height: 100%;
-  display: block; /* important */
+  display: block;
+  /* important */
 }
 
 .mdc-form-field--align-end>label {
@@ -257,5 +269,61 @@ input:hover {
 .download-link {
   text-decoration: underline;
   color: var(--mat-sys-primary);
+  cursor: pointer;
+}
+
+.sell-car-form-width {
+  width: 45%;
+}
+
+.mat-mdc-radio-button .mat-internal-form-field {
+  margin-right: 2rem !important;
+}
+
+.mat-mdc-radio-button .mdc-radio {
+  padding: 10px 0px !important;
+}
+
+.mat-mdc-radio-button .mdc-radio {
+  transform: scale(0.75) !important;
+  transform-origin: left center !important;
+}
+
+.hide {
+  display: none;
+}
+
+.form-control-mb {
+  margin-bottom: 2rem;
+}
+
+.mat-mdc-form-field-subscript-wrapper {
+  display: none;
+}
+
+.mdc-text-field {
+  padding: 0 !important;
+}
+
+.mat-mdc-select-arrow svg {
+  fill: #000 !important;
+}
+
+.error-border {
+  border: 1px solid red;
+  border-radius: 5px;
+}
+
+.error-message {
+  display: block;
+  color: red;
+  font-size: 12px;
+}
+
+.delete-icon {
+  color: red;
+}
+
+.cursor-pointer {
   cursor: pointer;
 }

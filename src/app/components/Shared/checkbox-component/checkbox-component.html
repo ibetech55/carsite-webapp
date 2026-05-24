@@ -1,0 +1,5 @@
+<div class="checkbox-component">
+    @if (!controlName) {
+        <mat-checkbox [labelPosition]="labelPosition" (change)="handleChange($event)" [value]="value" [checked]="checked">{{label}}</mat-checkbox>
+    }
+</div>

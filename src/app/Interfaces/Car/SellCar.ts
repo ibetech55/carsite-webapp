@@ -3,3 +3,8 @@ export interface IStepIndex {
     index: number;
     description: string;
 }
+
+export interface IMultipleImages {
+    url:string;
+    file:File;
+}
