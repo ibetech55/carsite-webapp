@@ -327,3 +327,11 @@ input:hover {
 .cursor-pointer {
   cursor: pointer;
 }
+
+.page-padding {
+  position: absolute;
+  top: 60px;
+  padding: 3rem;
+  width: 100%;
+  min-height: calc(100vh - 60px);
+}

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ICreateCarRequestBody } from '../../Interfaces/Car/Car';
+import { ICar, ICreateCarRequestBody } from '../../Interfaces/Car/Car';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -17,5 +17,8 @@ export class CarService {
   createCar(requestBody: ICreateCarRequestBody): Observable<any>{
     return this._HTTP.post<ICreateCarRequestBody>(this.API_URL, requestBody);
   }
-  
+
+  getCarByCarCode(carCode: string){
+    return this._HTTP.get<ICar>(`${this.API_URL}/${carCode}`);
+  }
 }

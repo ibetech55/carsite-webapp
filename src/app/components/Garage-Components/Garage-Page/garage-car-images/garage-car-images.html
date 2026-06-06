@@ -1,0 +1,7 @@
+<div class="garage-car-images">
+    <div class="garage-car-images__image-grid">
+        <div *ngFor="let image of images" class="garage-car-images__image-grid__img">
+            <img [src]="image.filename" [alt]="image.filename">
+        </div>
+    </div>
+</div>

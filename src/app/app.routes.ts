@@ -4,6 +4,7 @@ import { LoginForm } from './components/login/login-form/login-form';
 import { LandingPage } from './components/landing-page/landing-page/landing-page';
 import { BuyCarPage } from './pages/buy-car-page/buy-car-page';
 import { SellCarPage } from './pages/sell-car-page/sell-car-page';
+import { GaragePage } from './pages/garage-page/garage-page';
 
 export const routes: Routes = [
     {
@@ -12,7 +13,7 @@ export const routes: Routes = [
         children: [
             {
                 path: "dashboard",
-                component:LandingPage
+                component: LandingPage
             },
             {
                 path: "buy",
@@ -21,6 +22,10 @@ export const routes: Routes = [
             {
                 path: "sell",
                 component: SellCarPage
+            },
+            {
+                path: "garage/:carCode",
+                component: GaragePage
             }
         ]
     },

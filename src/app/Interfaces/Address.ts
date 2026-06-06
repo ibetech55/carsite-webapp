@@ -4,3 +4,10 @@ export interface IAddressRequestBody {
     city: string;
     state: string;
 }
+
+export interface IAddress {
+    street: string;
+    zipCode: string;
+    city: string;
+    state: string;
+}

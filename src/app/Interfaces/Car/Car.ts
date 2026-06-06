@@ -1,5 +1,6 @@
-import { IAddressRequestBody } from "../Address";
-import { IImageRequestBody } from "../Image";
+import { IAddress, IAddressRequestBody } from "../Address";
+import { IImage, IImageRequestBody } from "../Image";
+import { IUser } from "../User";
 
 export interface ICreateCarRequestBody {
     makeName: string;
@@ -29,4 +30,40 @@ export interface ICreateCarRequestBody {
     bodyType: string;
     makeCode: string;
     modelCode: string;
+}
+
+export interface ICar {
+    id: string;
+    makeName: string;
+    modelName: string;
+    version: string;
+    price: number;
+    mileage: number;
+    year: number;
+    userId: string;
+    carCode: string;
+    addressId: string;
+    vehicleIdentidficationNumber: string;
+    exteriorColor: string;
+    exteriorColorCode: string;
+    interiorColor: string;
+    interiorColorCode: string;
+    condition: string;
+    numberOwners: number;
+    accident: string;
+    drivetrain: string;
+    engine: string;
+    sellerNotes: string;
+    active: boolean;
+    cleanHistoryReport: boolean;
+    hasIssue: boolean;
+    numberKeys: number;
+    hasPayments: boolean;
+    status: string;
+    images: IImage[];
+    address:IAddress,
+    user: IUser,
+    dateCreated: Date;
+    dateUpdated: Date | null;
+    dateDeleted: Date | null;
 }

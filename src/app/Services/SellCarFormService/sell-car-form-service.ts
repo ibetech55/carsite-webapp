@@ -4,7 +4,7 @@ import { MakeService } from '../MakeService/make-service';
 import { IMakeList } from '../../Interfaces/Makes';
 import { ISelectOptions } from '../../Interfaces/Shared';
 import { ModelService } from '../ModelService/model-service';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, forkJoin, map, Observable, switchMap } from 'rxjs';
 import { IModelList } from '../../Interfaces/Model';
 import { LocationService } from '../LocationService/location-service';
 import { ICity, IState } from '../../Interfaces/Location';
@@ -17,6 +17,7 @@ import { ICreateCarRequestBody } from '../../Interfaces/Car/Car';
 import { CheckBoolean } from '../../Utils/CheckBoolean';
 import { IImageRequestBody } from '../../Interfaces/Image';
 import { CarService } from '../CarService/car-service';
+import { ImageService } from '../ImageService/image-service';
 
 
 @Injectable()
@@ -32,7 +33,8 @@ export class SellCarFormService {
     private readonly _LocationService: LocationService,
     private readonly _UserService: UserService,
     private readonly _FormService: FormService,
-    private readonly _CarService: CarService
+    private readonly _CarService: CarService,
+    private readonly _ImageService: ImageService
   ) {
 
   }
@@ -83,8 +85,8 @@ export class SellCarFormService {
   public multipleImages: IMultipleImages[] = [];
   public defaultImagePreviewUrl!: string;
   public submitted = false;
-  private modelListData:IModelList[] = [];
-  private makeListData:IMakeList[] = [];
+  private modelListData: IModelList[] = [];
+  private makeListData: IMakeList[] = [];
 
 
   public getMakeOptions() {
@@ -138,7 +140,7 @@ export class SellCarFormService {
           this.sellCarForm.patchValue({
             email: data.email,
             phoneNumber: data.phoneNumber,
-            location: data.location,
+            location: "Riverside, California",
             seller: `${data.firstName} ${data.lastName}`
           })
         }
@@ -155,9 +157,27 @@ export class SellCarFormService {
 
     const formData = this.sellCarForm.getRawValue();
     const defaultImage = formData.defaultImage ?? new File([], "test");
-    const modelData = this.modelListData.find(model=>model.modelName = formData.modelName);
-    const makeData = this.makeListData.find(make=>make.makeName = formData.makeName);
-    
+    const modelData = this.modelListData.find(model => model.modelName = formData.modelName);
+    const makeData = this.makeListData.find(make => make.makeName = formData.makeName);
+    const images: File[] = [defaultImage, ...formData.carImages];
+    const imageData: IImageRequestBody[] = [
+      {
+        fileSize: defaultImage.size,
+        fileExtension: defaultImage.type,
+        fileName: defaultImage.name,
+        defaultImage: true,
+        position: -1
+      },
+      ...formData.carImages.map((ci, idx) => ({
+        fileSize: ci.size,
+        fileExtension: ci.type,
+        fileName: ci.name,
+        defaultImage: false,
+        position: idx
+      }))
+    ];
+
+
     const requestBody: ICreateCarRequestBody = {
       makeName: formData.makeName,
       modelName: formData.modelName,
@@ -194,23 +214,19 @@ export class SellCarFormService {
     }
 
     this._CarService.createCar(requestBody)
-        .subscribe(data=>{
-          if(data){
-            console.log(data);
-            alert("Data saved");
-            this.sellCarForm.reset();
-          }
-        })
-  }
-
-  private handleRequestBodyCarImages(images: File[]): IImageRequestBody[] {
-    return images.map((image, index) => ({
-      fileName: image.name,
-      fileSize: image.size,
-      fileExtension: image.type,
-      position: index,
-      defaultImage: false
-    }))
+      .pipe(
+        switchMap(car => this._ImageService.getPresignedUrl(formData.carImages.length + 1)
+          .pipe(map(urls => ({ car, urls })))),
+        switchMap(res => forkJoin(res.urls.map((url, idx) => {
+          imageData[idx].fileName = url.key;
+          return this._ImageService.uploadCarImagesS3(url.presignedUrl, images[idx])
+        }))
+        .pipe(map(res2 => ({ carData: res.car })))),
+        switchMap(res=>this._ImageService.createMultipleImages(res.carData.carCode, imageData))
+      ).subscribe(data => {
+        console.log(data);
+        alert("Data saved")
+      })
   }
 
   hasErrors(controlName: keyof typeof this.sellCarForm.controls): boolean {

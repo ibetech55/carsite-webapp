@@ -5,3 +5,21 @@ export interface IImageRequestBody {
     defaultImage: boolean;
     position: number;
 }
+
+
+export interface IGetPresignedUrl {
+    presignedUrl: string;
+    key: string;
+}
+
+export interface IImage {
+    filename: string;
+    fileSize: number;
+    carId:string;
+    posiiton: number;
+    defaultImage: boolean;
+    active: boolean;
+    dateCreated: Date;
+    dateUpdated: Date | null;
+    dateDeleted: Date | null;
+}
