@@ -1,0 +1,9 @@
+<div class="garage-page-component page-padding" *ngIf="header$ | async as header">
+    <h1 class="page-header">{{header}}</h1>
+    <div>
+        <app-garage-car-details />
+    </div>
+    <div>
+        <app-garage-car-images />
+    </div>
+</div>

@@ -12,29 +12,33 @@ export class HeaderMenu {
   /**
    *
    */
-  constructor(private readonly _Router:Router) {
-    
+  constructor(private readonly _Router: Router) {
+
   }
   items = [
     {
-      label:"Buy",
-      href:"buy"
+      label: "Buy",
+      href: "buy"
     },
-        {
-      label:"Sell",
-      href:"sell"
+    {
+      label: "Sell",
+      href: "sell"
     },
-        {
-      label:"Research",
-      href:"research"
+    {
+      label: "Research",
+      href: "research"
     },
-        {
-      label:"Finance",
-      href:"finance"
-    }
+    {
+      label: "Finance",
+      href: "finance"
+    },
+    {
+      label: "My Garage",
+      href: "my-garage"
+    },
   ];
 
-  handleRoute(route:string){
+  handleRoute(route: string) {
     this._Router.navigate([route])
   }
 }

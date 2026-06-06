@@ -1,0 +1,26 @@
+<div *ngIf="car" class="garage-car-details">
+    <div class="garage-car-details__detail">
+        <app-detail label="Make:" [text]="car.makeName" />
+    </div>
+    <div class="garage-car-details__detail">
+        <app-detail label="Model:" [text]="car.modelName" />
+    </div>
+    <div class="garage-car-details__detail">
+        <app-detail label="Year:" [text]="car.year.toString()" />
+    </div>
+    <div class="garage-car-details__detail">
+        <app-detail label="Price:" [text]="car.price.toString()" />
+    </div>
+    <div class="garage-car-details__detail">
+        <app-detail label="Exterior Color:" [text]="car.exteriorColor" />
+    </div>
+    <div class="garage-car-details__detail">
+        <app-detail label="Interior Color:" [text]="car.interiorColor" />
+    </div>
+    <div class="garage-car-details__detail">
+        <app-detail label="Mileage:" [text]="car.mileage.toString()" />
+    </div>
+    <div class="garage-car-details__detail">
+        <app-detail label="Control ID:" [text]="car.carCode" />
+    </div>
+</div>

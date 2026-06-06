@@ -13,7 +13,13 @@ export class UserService {
       lastName: "Ibewiro",
       phoneNumber:"90912345678",
       email: "pibewiro@yahoo.com",
-      location: "Riverside, California"
+      location: "Riverside, California",
+      dealershipName: null,
+      userCode:"Test",
+      userType:"Test",
+      userId:"1111",
+      dateCreated: new Date(),
+      active: true
     });
   }
 }
