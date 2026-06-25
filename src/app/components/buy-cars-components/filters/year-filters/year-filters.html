@@ -1,0 +1,8 @@
+<div class="year-filters">
+    <div>
+        <app-select-component label="Min Year" [options]="minYears" (onChangeEmitter)="handleChange($event, 'minYear')" [selectedValue]="minYrSelected" />
+    </div>
+    <div>
+        <app-select-component label="Max Year" [options]="maxYears" (onChangeEmitter)="handleChange($event, 'maxYear')" [selectedValue]="maxYrSelected" />
+    </div>
+</div>

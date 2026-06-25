@@ -1,0 +1,17 @@
+<div class="buy-car-component">
+    <div class="buy-car-component__cards">
+        <div *ngFor="let car of carsData$ | async">
+            <app-buy-car-card 
+                [makeName]="car.makeName" 
+                [modelName]="car.modelName" 
+                [imageUrl]="defaultImage(car.carImages)"
+                [price]="car.price | moneyFormatter" 
+                [location]="car.address | locationFormatter"
+                [mileage]="car.mileage | milesFormatter"
+                [year]="car.year"
+                [userType]="car.user.userType"
+                [dealershipName]="car.user.dealershipName ?? ''"
+                />
+        </div>
+    </div>
+</div>

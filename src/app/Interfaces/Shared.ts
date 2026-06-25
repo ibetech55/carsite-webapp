@@ -17,3 +17,10 @@ export interface ICheckboxData {
     value: string,
     checked: boolean
 }
+
+export interface IPagination<T> {
+    data:T;
+    limit: number;
+    page:number;
+    totalCount:number;
+}

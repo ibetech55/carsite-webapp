@@ -16,7 +16,7 @@ export interface IImage {
     filename: string;
     fileSize: number;
     carId:string;
-    posiiton: number;
+    position: number;
     defaultImage: boolean;
     active: boolean;
     dateCreated: Date;

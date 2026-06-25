@@ -7,7 +7,9 @@
     }
 
     @if(!controlName){
-    <input matInput [id]="id" [name]="id" [type]="type">
+    <input matInput [id]="id" [name]="name" [type]="type" (blur)="handleBlur($event)"
+    [(ngModel)]="value"
+    (change)="handleChange($event)">
     }
   </mat-form-field>
   <span *ngIf="hasError" class="error-message">{{errorMessage}}</span>

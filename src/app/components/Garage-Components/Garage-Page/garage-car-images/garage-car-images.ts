@@ -20,7 +20,7 @@ export class GarageCarImages implements OnInit {
   ngOnInit(): void {
     this._CarDetailsService.images$
       .subscribe(data => {
-        this.images = data.sort((a,b)=>a.posiiton-b.posiiton);
+        this.images = data.sort((a,b)=>a.position - b.position);
       })
   }
 

@@ -23,4 +23,5 @@ export class SelectComponent {
   @Output() onChangeEmitter = new EventEmitter<string>();
   @Input() errorMessage!:string;
   @Input() hasError:boolean = false;
+  @Input() selectedValue!:string;
 }

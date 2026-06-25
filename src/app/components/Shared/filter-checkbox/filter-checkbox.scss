@@ -1,0 +1,26 @@
+:host ::ng-deep {
+    .filter-checkbox {
+        .mat-mdc-checkbox {
+            width: 100%;
+            display: flex !important;
+            justify-content: space-between !important;
+
+            .mat-internal-form-field {
+                overflow: hidden;
+                display: flex !important;
+                width: 100%;
+                justify-content: space-between !important;
+            }
+
+            .mdc-form-field--align-end>label {
+                margin-left: 0 !important;
+            }
+        }
+    }
+}
+
+.filter-checkbox__total {
+    position: absolute;
+    top:9px;
+    right: 35px;
+}

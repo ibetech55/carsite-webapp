@@ -1,0 +1,159 @@
+<div class="buy-car-filter-component">
+    <div class="buy-car-filter-component__save">
+        <h2>{{ totalCount$  | async  }} results found</h2>
+        <app-button-component label="Save Search" [btnBlock]="true" />
+    </div>
+
+    <div class="buy-car-filter-component__categories">
+        <h2>Location</h2>
+        <div>
+            <app-location-filters />
+        </div>
+    </div>
+
+    <div class="buy-car-filter-component__categories">
+        <h2>Vehicle Details</h2>
+        <div class="buy-car-filter-component__border-bottom">
+            <mat-accordion>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>Make</mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <app-make-filter />
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+        <div class="buy-car-filter-component__border-bottom">
+            <mat-accordion>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>Model</mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <app-model-filters />
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+        <div class="buy-car-filter-component__border-bottom">
+            <mat-accordion>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>Year</mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <app-year-filters />
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+                <div class="buy-car-filter-component__border-bottom">
+            <mat-accordion>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>Trim</mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <p>I'm visible because I am open</p>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </div>
+
+    <div class="buy-car-filter-component__categories">
+        <h2>Basics</h2>
+        <div class="buy-car-filter-component__border-bottom">
+            <mat-accordion>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>Price</mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <app-price-filter />
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+        <div class="buy-car-filter-component__border-bottom">
+            <mat-accordion>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>New/User</mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <p>I'm visible because I am open</p>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+
+        <div class="buy-car-filter-component__border-bottom">
+            <mat-accordion>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>Mileage</mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <p>I'm visible because I am open</p>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </div>
+
+    <div class="buy-car-filter-component__categories">
+        <h2>Style</h2>
+        <div class="buy-car-filter-component__border-bottom">
+            <mat-accordion>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>Body Style</mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <p>I'm visible because I am open</p>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+        <div class="buy-car-filter-component__border-bottom">
+            <mat-accordion>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>Vehicle Size</mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <p>I'm visible because I am open</p>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+
+        <div class="buy-car-filter-component__border-bottom">
+            <mat-accordion>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>Cab Type</mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <p>I'm visible because I am open</p>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+        <div class="buy-car-filter-component__border-bottom">
+            <mat-accordion>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>Door Count</mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <p>I'm visible because I am open</p>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+
+        <div class="buy-car-filter-component__border-bottom">
+            <mat-accordion>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>Exterior Color</mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <p>I'm visible because I am open</p>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+
+        <div class="buy-car-filter-component__border-bottom">
+            <mat-accordion>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>Interior Color</mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <p>I'm visible because I am open</p>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </div>
+</div>

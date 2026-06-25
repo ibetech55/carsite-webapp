@@ -15,7 +15,7 @@
     </mat-form-field>
     } @else {
     <mat-form-field>
-        <mat-select>
+        <mat-select (valueChange)="onChangeEmitter.emit($event)" [(value)]="selectedValue">
             @for(option of options; track $index){
             @if(option.label && option.value){
             <mat-option [value]="option.value">{{option.label}}</mat-option>

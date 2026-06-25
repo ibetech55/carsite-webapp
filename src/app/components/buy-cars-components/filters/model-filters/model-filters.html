@@ -1,0 +1,16 @@
+<div class="model-filter">
+    <div *ngFor="let modelFilter of modelFilters$ | async" class="model-filter__section">
+        <span class="model-filter__makename">{{modelFilter.makeName}}</span>
+        <div *ngFor="let filterData of modelFilter.modelFilterData">
+            <div>
+                <filter-checkbox 
+                    [label]="filterData.modelName" 
+                    [value]="filterData.modelName" 
+                    (changeEmitter)="handleChange($event)" 
+                    [checked]="handleChecked(filterData.modelName)" 
+                    [total]="filterData.total"
+                />
+            </div>
+        </div>
+    </div>
+</div>

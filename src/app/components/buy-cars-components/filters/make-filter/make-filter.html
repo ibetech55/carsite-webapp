@@ -1,0 +1,5 @@
+<div class="make-filter">
+    <div *ngFor="let make of makes$ | async">
+        <filter-checkbox [label]="make.makeName" [value]="make.makeName" (changeEmitter)="handleChanged($event)" />
+    </div>
+</div>

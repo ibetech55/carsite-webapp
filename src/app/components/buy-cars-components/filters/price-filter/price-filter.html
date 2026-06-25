@@ -1,0 +1,17 @@
+<div class="price-filter">
+    <div class="price-filter__inputs">
+        <div>
+            <app-input-component label="Min Price" [value]="minValSlider.value" name="minVal"
+                (onChangeEmitter)="handleChange($event, 'minVal')" />
+        </div>
+        <div>
+            <app-input-component label="Max Price" [value]="maxValSlider.value"
+                (onChangeEmitter)="handleChange($event, 'maxVal')" />
+        </div>
+    </div>
+
+    <mat-slider [min]="0" [max]="200000" step="500" >
+        <input [value]="minVal" matSliderStartThumb #minValSlider (input)="handleChange(minValSlider.value, 'minVal')">
+        <input [value]="maxVal" matSliderEndThumb #maxValSlider (input)="handleChange(maxValSlider.value, 'maxVal')">
+    </mat-slider>
+</div>

@@ -1,0 +1,25 @@
+.buy-car-page {
+    width: 90%;
+    margin: 60px auto 0 auto;
+    padding-top: 3rem;
+
+    &__sections {
+        display: flex;
+        margin-top: 3rem;
+
+
+        &__filters {
+            width: 20%;
+            border-right: 1px solid #c6c6c6;
+            min-height: 100vh;
+            padding-right: 2rem;
+            padding-bottom: 2rem;
+        }
+
+        &__cars {
+            width: 80%;
+            padding-left: 2rem;
+            padding-bottom: 2rem;
+        }
+    }
+}

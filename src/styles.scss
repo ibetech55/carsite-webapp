@@ -335,3 +335,15 @@ input:hover {
   width: 100%;
   min-height: calc(100vh - 60px);
 }
+
+.mat-mdc-slider {
+  min-width: 100% !important;
+  margin: 0 !important;
+}
+
+.mdc-checkbox__background {
+  height: 16px !important;
+  width: 16px !important;
+  border: 1px solid #000 !important;
+}
+ 

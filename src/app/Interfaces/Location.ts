@@ -8,3 +8,8 @@ export interface ICity {
     latitude: string;
     longitude: string;
 }
+
+export interface ILocationFormatter {
+    city: string;
+    state: string;
+}

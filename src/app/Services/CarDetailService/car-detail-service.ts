@@ -22,7 +22,6 @@ export class CarDetailService {
   getCarByCarCode(carCode: string) {
     this._CarService.getCarByCarCode(carCode)
       .subscribe(data => {
-        console.log(data)
         this.header$.next(`${data.makeName} ${data.modelName}`);
         this.car$.next(data);
         this.images$.next(data.images);
