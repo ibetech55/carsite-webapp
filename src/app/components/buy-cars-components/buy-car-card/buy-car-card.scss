@@ -1,0 +1,34 @@
+.buy-car-card {
+    // height: 425px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &__images {
+        width: 100%;
+        height: 200px;
+        background-color: #c6c6c6;
+        border-radius: 5px;
+
+        img {
+            display: block;
+            height: 100%;
+            width: 100%;
+            border-radius: 5px;
+        }
+    }
+
+    &__info {
+        padding: 1rem;
+
+        h2,
+        h3 {
+            margin-bottom: 1rem;
+        }
+
+        span {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+    }
+}

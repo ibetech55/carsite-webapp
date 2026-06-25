@@ -18,6 +18,7 @@ import { CheckBoolean } from '../../Utils/CheckBoolean';
 import { IImageRequestBody } from '../../Interfaces/Image';
 import { CarService } from '../CarService/car-service';
 import { ImageService } from '../ImageService/image-service';
+import { LoadingService } from '../loading-service';
 
 
 @Injectable()
@@ -34,7 +35,8 @@ export class SellCarFormService {
     private readonly _UserService: UserService,
     private readonly _FormService: FormService,
     private readonly _CarService: CarService,
-    private readonly _ImageService: ImageService
+    private readonly _ImageService: ImageService,
+    private readonly _LoadingService: LoadingService
   ) {
 
   }
@@ -148,15 +150,17 @@ export class SellCarFormService {
   }
 
   submitCar() {
+    this._LoadingService.loading$.next(true)
     this.submitted = true;
     this.sellCarForm.markAllAsTouched();
 
     if (this.sellCarForm.invalid) {
+      this._LoadingService.loading$.next(false)
       return;
     }
 
     const formData = this.sellCarForm.getRawValue();
-    const defaultImage = formData.defaultImage ?? new File([], "test");
+    const defaultImage = formData.defaultImage ?? new File([], "");
     const modelData = this.modelListData.find(model => model.modelName = formData.modelName);
     const makeData = this.makeListData.find(make => make.makeName = formData.makeName);
     const images: File[] = [defaultImage, ...formData.carImages];
@@ -221,10 +225,12 @@ export class SellCarFormService {
           imageData[idx].fileName = url.key;
           return this._ImageService.uploadCarImagesS3(url.presignedUrl, images[idx])
         }))
-        .pipe(map(res2 => ({ carData: res.car })))),
-        switchMap(res=>this._ImageService.createMultipleImages(res.carData.carCode, imageData))
+          .pipe(map(res2 => ({ carData: res.car })))),
+        switchMap(res => this._ImageService.createMultipleImages(res.carData.carCode, imageData))
       ).subscribe(data => {
-        console.log(data);
+        this.sellCarForm.reset();
+        this._LoadingService.loading$.next(false)
+
         alert("Data saved")
       })
   }

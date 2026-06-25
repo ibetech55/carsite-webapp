@@ -1,0 +1,9 @@
+<div class="location-filter">
+    <div class="location-filter__distance">
+        <app-select-component label="Search within" [options]="distanceOptions"
+            (onChangeEmitter)="handleDistanceSearch($event)" />
+    </div>
+    <div>
+        <app-input-component label="Zip code" (onBlurEmitter)="handleBlur($event)" />
+    </div>
+</div>

@@ -1,0 +1,11 @@
+.model-filter {
+    height: 400px;
+    overflow-y: scroll;
+
+    &__section {
+        margin-bottom: 1rem;
+    }
+    &__makename {
+        font-weight: bold;
+    }
+}

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ControlContainer, FormGroupDirective, FormsModule, ReactiveFormsModule, ValidationErrors } from '@angular/forms';
 import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -21,4 +21,19 @@ export class InputComponent {
   @Input() disabled: boolean = false;
   @Input() errorMessage!: string;
   @Input() hasError: boolean = false;
+  @Output() onBlurEmitter = new EventEmitter<string>();
+  @Input() value: string | number = "";
+  @Input() name: string = "";
+  @Output() onChangeEmitter = new EventEmitter<string>();
+
+
+  handleChange(event: Event) {
+    const input = event.target as HTMLInputElement;
+    this.onChangeEmitter.emit(input.value);
+  }
+
+  handleBlur(event: Event) {
+    const input = event.target as HTMLInputElement;
+    this.onBlurEmitter.emit(input.value);
+  }
 }

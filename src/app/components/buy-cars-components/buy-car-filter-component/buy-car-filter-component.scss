@@ -1,0 +1,28 @@
+.buy-car-filter-component {
+    &__save {
+        padding: 1rem;
+        border: 1px solid var(--mat-sys-primary);
+        border-radius: 5px;
+
+        h2 {
+            margin-bottom: 1rem;
+            font-weight: 500;
+            font-size: 18px;
+        }
+    }
+
+    &__categories {
+        margin-top: 2rem;
+        border: 1px solid var(--mat-sys-primary);
+        padding: 1rem;
+        border-radius: 5px;
+
+        h2 {
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    &__border-bottom {
+        border-bottom: 1px solid #c2c2c2;
+    }
+}
