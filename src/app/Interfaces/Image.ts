@@ -1,7 +1,7 @@
 export interface IImageRequestBody {
-    fileSize:number;
-    fileExtension:string;
-    fileName:string;
+    fileSize: number;
+    fileExtension: string;
+    fileName: string;
     defaultImage: boolean;
     position: number;
 }
@@ -15,11 +15,16 @@ export interface IGetPresignedUrl {
 export interface IImage {
     filename: string;
     fileSize: number;
-    carId:string;
+    carId: string;
     position: number;
     defaultImage: boolean;
     active: boolean;
     dateCreated: Date;
     dateUpdated: Date | null;
     dateDeleted: Date | null;
+}
+
+export interface ICarDetailImages {
+    defaultImageUrl: string;
+    imageUrls: string[]
 }

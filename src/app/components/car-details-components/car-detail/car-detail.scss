@@ -1,0 +1,18 @@
+.car-detail {
+    // background-color: #e5e5e5;
+    height: 80px;
+    width: 170px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+    padding: 1rem;
+
+    span {
+        display: block;
+    }
+
+    &__label {
+        font-weight: 500;
+    }
+}

@@ -114,5 +114,33 @@ export interface IViewCar {
     dateCreated: Date;
     dateUpdated: Date | null;
     dateDeleted: Date | null;
+}
 
+export interface ICarDetails {
+    makeName: string;
+    modelName: string;
+    year: number;
+    exteriorColor: string;
+    interiorColor: string;
+    exteriorColorCode: string;
+    interiorColorCode: string;
+    hasIssue: boolean;
+    hasPayments: boolean;
+    accident: boolean;
+    active: boolean;
+    price: number;
+    mileage: number;
+    vehicleIdentidficationNumber: string;
+    bodyType: string;
+    userId: string;
+    numberKeys: number;
+    numberOwners: number;
+    status: string;
+    condition: string;
+    carCode: string;
+    sellerNotes: string;
+    engine: string;
+    drivetrain: string;
+    dateCreated: Date;
+    address: IAddress;
 }

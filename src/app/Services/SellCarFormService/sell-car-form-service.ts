@@ -204,7 +204,7 @@ export class SellCarFormService {
       hasPayments: CheckBoolean(formData.hasPayments),
       numberKeys: +formData.numberKeys,
       price: +formData.price,
-      condition: formData.interiorColorCode,
+      condition: formData.condition,
       accident: CheckBoolean(formData.accident),
       hasHistory: CheckBoolean(formData.cleanHistory),
       hasIssues: CheckBoolean(formData.hasIssues),

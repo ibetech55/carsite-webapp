@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ICar, ICarQuery, ICreateCarRequestBody, IViewCar } from '../../Interfaces/Car/Car';
+import { ICar, ICarDetails, ICarQuery, ICreateCarRequestBody, IViewCar } from '../../Interfaces/Car/Car';
 import { Observable } from 'rxjs';
 import { IPagination } from '../../Interfaces/Shared';
 
@@ -66,5 +66,9 @@ export class CarService {
 
   getCarByCarCode(carCode: string) {
     return this._HTTP.get<ICar>(`${this.API_URL}/${carCode}`);
+  }
+
+  getCarDetails(carCode: string): Observable<ICarDetails> {
+    return this._HTTP.get<ICarDetails>(`${this.API_URL}/car-details-info/${carCode}`);
   }
 }
