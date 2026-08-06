@@ -1,0 +1,35 @@
+.car-details-info {
+    span {
+        display: block;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        span {
+            font-size: 30px;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        margin-bottom: 2rem;
+    }
+
+    &__details-section {
+        width:48%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 20px;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    &__details {
+        width: 32%;
+
+        span {
+            margin-bottom: 0.5rem
+        }
+    }
+}

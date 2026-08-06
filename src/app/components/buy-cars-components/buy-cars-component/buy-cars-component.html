@@ -2,6 +2,7 @@
     <div class="buy-car-component__cards">
         <div *ngFor="let car of carsData$ | async">
             <app-buy-car-card 
+                (click)="handleDetailsClick(car.carCode)"
                 [makeName]="car.makeName" 
                 [modelName]="car.modelName" 
                 [imageUrl]="defaultImage(car.carImages)"

@@ -1,0 +1,13 @@
+<div class="car-detail-images">
+    <div class="car-detail-images__section">
+        <div class="car-detail-images__section__default-images" *ngIf="defaulImageUrl$ | async as defaulImageUrl">
+            <img [src]="defaulImageUrl" alt="image-defualt">
+        </div>
+        <div class="car-detail-images__section__preview-images">
+            <div *ngFor="let imageUrl of imageUrls$ | async; let idx"
+                class="car-detail-images__section__preview-images__img">
+                <img [src]="imageUrl" [alt]="idx">
+            </div>
+        </div>
+    </div>
+</div>

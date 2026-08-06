@@ -9,6 +9,7 @@ import { IImage } from '../../../Interfaces/Image';
 import { MoneyFormatterPipe } from '../../../Pipes/MoneyFormatter/money-formatter-pipe';
 import { MilesFormatterPipe } from '../../../Pipes/MilesFormatter/miles-formatter-pipe';
 import { LocationFormatterPipe } from '../../../Pipes/LocationFormatter/location-formatter-pipe';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-buy-cars-component',
@@ -22,7 +23,7 @@ export class BuyCarsComponent implements OnInit, OnDestroy {
   /**
    *
    */
-  constructor(public _BuyCarsService:BuyCarService) {
+  constructor(public _BuyCarsService:BuyCarService, private _Router: Router) {
 
   }
   ngOnDestroy(): void {
@@ -38,6 +39,10 @@ export class BuyCarsComponent implements OnInit, OnDestroy {
 
   defaultImage(images:IImage[]){
     return images?.find(i=>i.defaultImage)?.filename ?? ""
+  }
+
+  handleDetailsClick(carCode:string){
+    this._Router.navigate([`car-details/${carCode}`]);
   }
 
   

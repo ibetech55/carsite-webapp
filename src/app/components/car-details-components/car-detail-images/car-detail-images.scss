@@ -1,0 +1,44 @@
+.car-detail-images {
+    &__section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+
+        &__default-images,
+        &__preview-images {
+            width: 48%;
+            height: 500px;
+        }
+
+        &__default-images {
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+
+            img {
+                display: block;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &__preview-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 20px;
+
+            &__img {
+                height: 240px;
+                box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+
+                img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+<div class="car-details-info" *ngIf="carDetails$ | async as data">
+    <div class="car-details-info__header">
+        <div>
+            <span>{{data.year}} {{data.makeName}} {{data.modelName}}</span>
+            <span>{{data.price | moneyFormatter}}</span>
+        </div>
+        <div>
+            <app-button-component label="View Images" />
+        </div>
+    </div>
+    <div class="car-details-info__details-section">
+        <app-car-detail label="Mileage" [text]="data.mileage | milesFormatter" />
+        <app-car-detail label="Exterior Color" [text]="data.exteriorColor" />
+        <app-car-detail label="Interior Color" [text]="data.interiorColor" />
+        <app-car-detail label="Body Type" [text]="data.bodyType" />
+        <app-car-detail label="Transmission" [text]="data.drivetrain" />
+        <app-car-detail label="Drivetrain" [text]="data.drivetrain" />
+        <app-car-detail label="Engine" [text]="data.engine" />
+        <app-car-detail label="Condition" [text]="data.condition" />
+        <app-car-detail label="Location" [text]="handleLocation(data)" />
+        <app-car-detail label="Zip Code" [text]="data.address.zipCode" />
+
+        <app-car-detail label="Gasoline" [text]="data.engine" />
+        <app-car-detail label="MPG" [text]="data.condition" />
+        <app-car-detail label="Date Listed" [text]="data.engine" />
+
+    </div>
+
+</div>
