@@ -1,0 +1,22 @@
+.register-form {
+    padding: 2rem;
+
+    form {
+        margin-top: 3rem;
+    }
+
+    &__input-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+
+        &__input {
+            width: 48%;
+        }
+    }
+
+    &__btn {
+        text-align: right;
+    }
+}

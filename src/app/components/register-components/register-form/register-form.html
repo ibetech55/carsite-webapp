@@ -1,0 +1,50 @@
+<div class="register-form">
+    <h1>Register</h1>
+    <form [formGroup]="registerForm" (ngSubmit)="handleRegistration()">
+        <div class="register-form__input-row">
+            <app-input-component label="First Name" controlName="firstName" name="firstName"
+                class="register-form__input-row__input" />
+            <app-input-component label="Last Name" controlName="lastName" name="lastName"
+                class="register-form__input-row__input" />
+        </div>
+
+        <div class="register-form__input-row">
+            <app-input-component label="Username" controlName="username" name="username"
+                class="register-form__input-row__input" />
+            <app-input-component label="Email" controlName="email" name="email"
+                class="register-form__input-row__input" />
+        </div>
+
+        <div class="register-form__input-row">
+            <app-input-component label="Phone Number" controlName="phoneNumber" name="phoneNumber"
+                class="register-form__input-row__input" />
+            <app-select-component label="User Type" controlName="userType" name="userType"
+                class="register-form__input-row__input" [options]="userTypeOptions" />
+        </div>
+
+        <div class="register-form__input-row">
+            <app-select-component label="State" controlName="state" name="state" class="register-form__input-row__input"
+                [options]="stateOptions" (onChangeEmitter)="handleStateSelected($event)" />
+            <app-select-component label="City" controlName="city" name="city" [options]="cityOptions"
+                class="register-form__input-row__input" />
+        </div>
+
+        <div class="register-form__input-row">
+            <app-input-component label="Street Address" controlName="streetAddress" name="streetAddress"
+                class="register-form__input-row__input" />
+            <app-input-component label="Zip Code" controlName="zipCode" name="zipCode"
+                class="register-form__input-row__input" />
+        </div>
+
+        <div class="register-form__input-row">
+            <app-input-component label="Password" controlName="password" name="password"
+                class="register-form__input-row__input" type="password" />
+            <app-input-component label="Confirm Password" controlName="confirmPassword" name="confirmPassword"
+                class="register-form__input-row__input" type="password" />
+        </div>
+
+        <div class="register-form__btn">
+            <app-button-component label="Register" type="submit" />
+        </div>
+    </form>
+</div>

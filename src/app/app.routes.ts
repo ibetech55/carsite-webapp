@@ -7,6 +7,7 @@ import { SellCarPage } from './pages/sell-car-page/sell-car-page';
 import { GaragePage } from './pages/garage-page/garage-page';
 import { CarDetailsPages } from './pages/car-details-pages/car-details-pages';
 import { LoginPage } from './pages/login-page/login-page';
+import { RegisterPage } from './pages/register-page/register-page';
 
 export const routes: Routes = [
     {
@@ -42,5 +43,9 @@ export const routes: Routes = [
     {
         path: "",
         component: LandingPage
+    },
+    {
+        path: "register",
+        component: RegisterPage
     }
 ];

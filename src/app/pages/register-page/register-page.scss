@@ -1,15 +1,16 @@
-.login-page {
+.register-page {
     display: flex;
+    height: 100vh;
 
-    &__left {
-        width: 60%;
-        height: 100vh;
+    &__left-side {
+        height: 100%;
+        width: 35%;
         background-color: var(--mat-sys-primary);
         box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     }
 
     &__form {
-        width: 40%;
-        height: 100vh;
+        height: 100%;
+        width:65%;
     }
 }

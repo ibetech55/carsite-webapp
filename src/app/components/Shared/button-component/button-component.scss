@@ -1,3 +1,18 @@
-.btn-block{
-    width:100%
+button:hover {
+    background-color:#000;
+}
+
+.btn-block {
+    width: 100%
+}
+
+button.btn-light {
+    background-color: #fff;
+    color: var(--mat-sys-primary);
+    border: 1px solid var(--mat-sys-primary);
+
+    &:hover {
+        background-color: #fff !important;
+        color: var(--mat-sys-primary);
+    }
 }
