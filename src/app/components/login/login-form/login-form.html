@@ -1,1 +1,21 @@
-<p>login-form works!</p>
+<div class="login-form">
+    <form [formGroup]="loginForm" (ngSubmit)="handleLogin()">
+        <div class="login-form__inputs">
+            <div class="login-form__section">
+                <app-input-component controlName="email" label="Email" />
+            </div>
+            <div class="login-form__section">
+                <app-input-component controlName="password" label="Password" />
+            </div>
+        </div>
+        <div class="login-form__section">
+            <app-button-component label="Login" [btnBlock]="true" />
+        </div>
+        <div class="login-form__section">
+            <app-button-component label="Continue With Google" [btnBlock]="true" [btnLight]="true" />
+        </div>
+        <div class="register-link">
+            <a routerLink="/register">Create Account</a>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,6 @@
+./Dockerfile*
+./dockerignore
+./vscode
+./angular
+./dist
+node_modules

@@ -1,0 +1,8 @@
+name: carsite-webapp
+services:
+  carsite-webapp:
+   container_name: carsite-webapp
+   build:
+    context: .
+   ports:
+    - 4300:4300
