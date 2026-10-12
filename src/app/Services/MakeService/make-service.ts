@@ -12,7 +12,7 @@ export class MakeService {
    *
    */
 
-  private readonly _URL = environment.MAKE_API_URL;
+  private readonly _URL = `${environment.BRAND_MS_API}/make`;
 
   constructor(private readonly _HTTP: HttpClient) {
   }

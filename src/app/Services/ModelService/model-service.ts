@@ -15,7 +15,7 @@ export class ModelService {
   constructor(private readonly _HTTP: HttpClient) {
 
   }
-  private readonly _URL = environment.MODEL_API_URL;
+  private readonly _URL = `${environment.BRAND_MS_API}/model`;
 
   public getModelList(makeName: string): Observable<IModelList[]> {
     return this._HTTP.get<IModelList[]>(`${this._URL}/modelsByMakeName/${makeName}`);
